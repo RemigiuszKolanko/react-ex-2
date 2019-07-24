@@ -1,12 +1,16 @@
 import React from 'react';
 
-class Validation extends React.Component {
-    render() {
-        console.log('====================================');
-        console.log(this.props.length);
-        console.log('====================================');
-        return <p>Validators {this.props.length}</p>;
+const Validation = (props) => {
+    let validationMessage = 'Text long enough.';
+
+    if(props.length < 6) {
+        validationMessage = 'Text too short.'
     }
+    return (
+        <div>
+            <p>{validationMessage}</p>
+        </div>
+    )
 }
 
 export default Validation;
